@@ -22,7 +22,7 @@ RUN npm run build
 ENV BUILD_DATE = `date -u +"%Y-%m-%dT%H:%M:%SZ"`
 
 # Expose the port that the client will be served on
-EXPOSE 3000
+EXPOSE 5173
 
-# Start the client
-CMD [ "npm", "dev" ]
+# Start the client from the build
+CMD [ "npm", "run", "dev" ]

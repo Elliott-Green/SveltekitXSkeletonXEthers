@@ -1,15 +1,25 @@
 {
-	"name": "sk-ethers-template",
-	"version": "0.0.1",
-	"private": true,
+	"name": "sk-skeleton-ethers-template",
+	"author": {
+		"name": "Elliott Green",
+		"url": "https://github.com/Elliott-Green"
+	},
+	"license": "MIT License",
+	"version": "1.0.0",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --host",
 		"build": "vite build",
-		"preview": "vite preview",
+		"preview": "vite preview --host",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"docker:build": "docker build -t sk-skeleton-ethers-template-image .",
+		"docker:run": "docker run -d --name sk-skeleton-ethers-template-container -p 5173:5173 sk-skeleton-ethers-template-image",
+		"docker:stop": "docker stop sk-skeleton-ethers-template-container",
+		"docker:remove": "docker rm sk-skeleton-ethers-template-container",
+		"docker:clean": "docker rmi -f sk-skeleton-ethers-template-image"
+
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
@@ -31,8 +41,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@metamask/etherscan-link": "^2.2.0",
 		"@openzeppelin/contracts": "^4.8.3",
-		"@skeletonlabs/skeleton": "^1.5.1",
+		"@skeletonlabs/skeleton": "^1.6.1",
 		"ethers": "^6.3.0",
 		"ethers-svelte": "^3.2.0"
 	}

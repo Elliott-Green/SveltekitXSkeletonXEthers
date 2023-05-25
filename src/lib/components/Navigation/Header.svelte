@@ -8,8 +8,9 @@
 		signerAddress,
 		contracts
 	} from 'ethers-svelte';
+	import { ethers } from 'ethers';
 	import { defaultEvmStores as evm } from 'ethers-svelte';
-	import { Jazzicon } from 'ethers-svelte/components'
+	import { Jazzicon } from 'ethers-svelte/components';
 	import { AppBar } from '@skeletonlabs/skeleton';
 	import ConnectIcon from '../Icons/ConnectIcon.svelte';
 
@@ -38,7 +39,9 @@
 </script>
 
 <AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
-	<svelte:fragment slot="lead">SKSE</svelte:fragment>
+	<svelte:fragment slot="lead"
+		><p class="font-bold">Sveltekit X Skeleton X Ethers</p></svelte:fragment
+	>
 
 	<svelte:fragment slot="trail">
 		{#if !$connected}
