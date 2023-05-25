@@ -120,7 +120,7 @@ This repository contains an opinionated hello world using the [Greeter / Hello W
 
 ## How do I use this as a template then?
 
-You will need the ABI of the contracts you want to interact with. 
+You will need the ABI of the contracts you want to interact with.
 
 I recommend using [this template](https://github.com/PaulRBerg/hardhat-template) to setup a hardhat environment to test, deploy and interact with your contract.
 

@@ -73,7 +73,7 @@
 	<dl class="col-span-3 grid grid-cols-3 gap-4">
 		<div class="flex items-center space-x-4">
 			<span class="inline-flex items-center justify-center h-10 w-10 rounded-full">
-				<ConnectIcon class="h-6 w-6" />
+				<ConnectIcon class={"h-6 w-6"} />
 			</span>
 			<div class="h-10">
 				<dt class="text-sm">IsConnected</dt>
@@ -126,7 +126,7 @@
 			</div>
 		</div>
 	</dl>
-	
+
 	<h2 class="col-span-3 text-2xl font-bold pt-2">Query Balance</h2>
 
 	<form use:focusTrap={isFocused} class="col-span-4 grid grid-cols-7 gap-4 items-center">

@@ -46,7 +46,7 @@
 	<svelte:fragment slot="trail">
 		{#if !$connected}
 			<button on:click={ConnectWallet} class="btn variant-filled">
-				<span class="pl-1 pr-1"><ConnectIcon /></span>
+				<span class="pl-1 pr-1">	<ConnectIcon class={"h-6 w-6"} /></span>
 				<span class="pl-1 pr-1">Connect Wallet</span>
 			</button>
 		{:else}

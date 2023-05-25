@@ -10,11 +10,12 @@
 	} from 'ethers-svelte';
 	import { toastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
-	import { createExplorerLinkForChain } from '@metamask/etherscan-link';
-	import { goto } from '$app/navigation';
 	import { focusTrap } from '@skeletonlabs/skeleton';
-
 	import WriteIcon from '../Icons/WriteIcon.svelte';
+
+	// CommonJS module default export
+	import etherscanPkg from '@metamask/etherscan-link';
+	const { createExplorerLinkForChain } = etherscanPkg;
 
 	let isFocused: boolean = true;
 

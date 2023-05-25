@@ -19,7 +19,6 @@
 		"docker:stop": "docker stop sk-skeleton-ethers-template-container",
 		"docker:remove": "docker rm sk-skeleton-ethers-template-container",
 		"docker:clean": "docker rmi -f sk-skeleton-ethers-template-image"
-
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",

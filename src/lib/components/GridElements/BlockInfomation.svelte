@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { connected, provider, chainId } from 'ethers-svelte';
-	import { env } from '$env/dynamic/public';
 	import { Paginator } from '@skeletonlabs/skeleton';
 
-	import { createExplorerLinkForChain } from '@metamask/etherscan-link';
+	// CommonJS module default export
+	import etherscanPkg from '@metamask/etherscan-link';
+	const { createExplorerLinkForChain } = etherscanPkg;
 
 	type TransactionTableRow = {
 		url: string;
