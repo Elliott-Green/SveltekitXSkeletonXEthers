@@ -16,19 +16,19 @@
 </script>
 
 <div class="h-screen relative absolute">
-	<canvas id="gradient-canvas" class="absolute z-0 opacity-50 h-screen" data-transition-in />
+    <canvas id="gradient-canvas" class="absolute z-0 opacity-50 h-screen" data-transition-in />
 
-	<div class="absolute w-full text-center grid content-center justify-center">
-		<div class="grid grid-cols-3 gap-10 p-10 m-10 auto-rows-auto place-items-center">
-			<div class="variant-ghost p-4 self-start">
-				<AccountInfomation />
-			</div>
-			<div class="variant-ghost-primary p-4 self-start">
-				<BlockInfomation />
-			</div>
-			<div class="variant-ghost-secondary p-4 self-start">
-				<ContractReadWrite />
-			</div>
-		</div>
-	</div>
+    <div class="absolute w-full h-full flex justify-center xs:pt-60">
+        <div class="grid grid-cols-1 sm:grid-cols-3 p-5 m-5 auto-rows-auto place-items-start gap-10 md:gap-8">
+            <div class="variant-ghost p-2">
+                <AccountInfomation />
+            </div>
+            <div class="variant-ghost-primary p-2">
+                <BlockInfomation />
+            </div>
+            <div class="variant-ghost-secondary p-2 ">
+                <ContractReadWrite />
+            </div>
+        </div>
+    </div>
 </div>

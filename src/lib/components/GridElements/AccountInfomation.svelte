@@ -16,7 +16,7 @@
 	let isFocused: boolean = true;
 
 	let queriedAddress: string;
-	$: queriedAddress = deadAddress;
+	$: queriedAddress = '';
 	let queriedRawBalance: ethers.BigNumberish;
 	$: queriedRawBalance = 0;
 	let queriedFormattedBalance: string;
@@ -25,8 +25,8 @@
 	$: queriedEnsName;
 
 	// Once wallet is connected and we have a signer, put their address into the queryAddress and then query it
-	signer.subscribe(async () => {
-		if ($signer) {
+	provider.subscribe(async () => {
+		if ($provider) {
 			queriedAddress = $signerAddress;
 			await BtnFetchBalanceForQueryAddress();
 		}
@@ -68,84 +68,88 @@
 	}
 </script>
 
-<div class="p-6 grid grid-cols-2 gap-6">
-	<h2 class="col-span-3 text-2xl font-bold mb-2">Account Information</h2>
-	<dl class="col-span-3 grid grid-cols-3 gap-4">
-		<div class="flex items-center space-x-4">
-			<span class="inline-flex items-center justify-center h-10 w-10 rounded-full">
-				<ConnectIcon class={"h-6 w-6"} />
-			</span>
-			<div class="h-10">
-				<dt class="text-sm">IsConnected</dt>
-				<dd class="text-sm">{$connected}</dd>
-			</div>
-		</div>
-		<div class="flex items-center space-x-4">
+
+<div class="p-6 grid grid-cols-1">
+    <h2 class="col-span-full text-2xl font-bold mb-2">Account Information</h2>
+	<dl class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-2">
+        <div class="flex items-center space-x-2 sm:space-x-4">
+            <span class="inline-flex items-center justify-center h-10 w-10 rounded-full">
+                <ConnectIcon class={'h-6 w-6'} />
+            </span>
+            <div class="h-10">
+                <dt class="text-sm">IsConnected</dt>
+                <dd class="text-xs">{$connected}</dd>
+            </div>
+        </div>
+		<div class="flex items-center space-x-2 sm:space-x-4">
 			<span class="inline-flex items-center justify-center h-10 w-10 rounded-full">
 				<HomeIcon class="h-6 w-6" />
 			</span>
 			<div class="h-10">
 				<dt class="text-sm">ChainID</dt>
-				<dd class="text-sm">{$chainId}</dd>
+				<dd class="text-xs">{$chainId}</dd>
 			</div>
 		</div>
-		<div class="flex items-center space-x-4">
+		<div class="flex items-center space-x-2 sm:space-x-4">
 			<span class="inline-flex items-center justify-center h-10 w-10 rounded-full">
 				<IdentificationIcon class="h-6 w-6" />
 			</span>
 			<div class="h-10">
 				<dt class="text-sm">Address</dt>
-				<dd class="text-sm">{shortenAddress($signerAddress ?? deadAddress)}</dd>
+				<dd class="text-xs">{shortenAddress($signerAddress ?? deadAddress)}</dd>
 			</div>
 		</div>
-		<div class="flex items-center space-x-4">
+		<div class="flex items-center space-x-2 sm:space-x-4">
 			<span class="inline-flex items-center justify-center h-10 w-10 rounded-full">
 				<MoneyIcon class="h-6 w-6" />
 			</span>
 			<div class="h-10">
 				<dt class="text-sm">Formatted Balance:</dt>
-				<dd class="text-sm">{queriedFormattedBalance} ETH</dd>
+				<dd class="text-xs">{queriedFormattedBalance} ETH</dd>
 			</div>
 		</div>
-		<div class="flex items-center space-x-4">
+		<div class="flex items-center space-x-2 sm:space-x-4">
 			<span class="inline-flex items-center justify-center h-10 w-10 rounded-full">
 				<MoneyIcon class="h-6 w-6" />
 			</span>
 			<div class="h-10">
 				<dt class="text-sm">Raw Balance:</dt>
-				<dd class="text-sm">{queriedRawBalance} GWEI</dd>
+				<dd class="text-xs">{queriedRawBalance} GWEI</dd>
 			</div>
 		</div>
-		<div class="flex items-center space-x-4">
+		<div class="flex items-center space-x-2 sm:space-x-4">
 			<span class="inline-flex items-center justify-center h-10 w-10 rounded-full">
 				<IdentificationIcon class="h-6 w-6" />
 			</span>
 			<div class="h-10">
 				<dt class="text-sm">ENS Name</dt>
-				<dd class="text-sm">{queriedEnsName ?? 'N/A'}</dd>
+				<dd class="text-xs">{queriedEnsName ?? 'N/A'}</dd>
 			</div>
 		</div>
 	</dl>
 
-	<h2 class="col-span-3 text-2xl font-bold pt-2">Query Balance</h2>
+	<h2 class="col-span-full text-2xl font-bold pt-2">Query Balance</h2>
 
-	<form use:focusTrap={isFocused} class="col-span-4 grid grid-cols-7 gap-4 items-center">
-		<div class="col-span-5 flex flex-col justify-center items-start">
-			<input
-				id="address"
-				bind:value={queriedAddress}
-				type="text"
-				class="mt-1 block w-full py-2 px-3 rounded-md focus:ring-2 focus:ring-blue-500"
-				placeholder="Enter Address"
-			/>
-		</div>
+    <form
+        use:focusTrap={isFocused}
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-center"
+    >
+        <div class="col-span-full sm:col-span-1 lg:col-span-2 flex flex-col justify-center items-start">
+            <input
+                id="address"
+                bind:value={queriedAddress}
+                type="text"
+                class="mt-1 block w-full py-2 px-3 rounded-md focus:ring-2 focus:ring-blue-500"
+                placeholder="Query an address or ENS"
+            />
+        </div>
 
-		<button
-			on:click={BtnFetchBalanceForQueryAddress}
-			class="btn variant-filled col-span-2 inline-flex items-center justify-center px-4 py-2 rounded-md"
-		>
-			<SearchIcon class={'h-6 w-6 mr-2'} />
-			Fetch Balance
-		</button>
-	</form>
+        <button
+            on:click={BtnFetchBalanceForQueryAddress}
+            class="btn variant-filled col-span-full sm:col-span-1 lg:col-span-1 inline-flex items-center justify-center px-4 py-2 rounded-md"
+        >
+            <SearchIcon class={'h-6 w-6 mr-2'} />
+            Fetch Balance
+        </button>
+    </form>
 </div>

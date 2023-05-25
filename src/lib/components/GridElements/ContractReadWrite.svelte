@@ -102,8 +102,8 @@
 	}
 </script>
 
-<div class="p-6">
-	<h2 class="col-span-3 text-3xl font-semibold mb-2">Contract ABI Read/Write</h2>
+<div class="p-4 md:p-6">
+	<h2 class="text-xl md:text-3xl font-semibold mb-2">Contract ABI Read/Write</h2>
 	<p class="">
 		This section is proving that we can read, write and stay updated with the state field 'Greet'
 		from the Greeter contract. <a
@@ -113,31 +113,31 @@
 		>
 	</p>
 
-	<div class="pt-6">
+	<div class="pt-4 md:pt-6">
 		{#if $connected}
 			{#if $chainId != SEPOLIA_CHAINID}
 				<div class="">
-					<p class="text-base mb-2">
+					<p class="text-sm md:text-base mb-2">
 						You are connected to the wrong network: {getChainDataByChainId($chainId).name}.
 					</p>
 
-					<p class="text-base mb-2">
+					<p class="text-sm md:text-base mb-2">
 						Please connect to the network {getChainDataByChainId(SEPOLIA_CHAINID).name} for the $contract
 						store demo.
 					</p>
-					<p class="text-base mb-2">
+					<p class="text-sm md:text-base mb-2">
 						You can add additional testnet connections to metamask via (Account Icon / Settings /
 						Advanced / Show Test Networks)
 					</p>
 				</div>
 			{:else if $contracts.greeter}
-				<h3 class="col-span-3 text-3xl font-semibold mb-2">Read State</h3>
+				<h3 class="text-xl md:text-3xl font-semibold mb-2">Read State</h3>
 
-				<p class="text-lg mb-4">The current greeting is: {currentGreeting}</p>
-				<h3 class="col-span-3 text-3xl font-semibold mb-2">Write State</h3>
+				<p class="text-base md:text-lg mb-4 text-center">The current greeting is: {currentGreeting}</p>
+				<h3 class="text-xl md:text-3xl font-semibold mb-2">Write State</h3>
 
-				<form use:focusTrap={isFocused} class="col-span-4 grid grid-cols-7 gap-4 items-center">
-					<div class="col-span-5 flex flex-col justify-center items-start">
+				<form use:focusTrap={isFocused} class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+					<div class="md:col-span-8 flex flex-col justify-center items-start">
 						<input
 							id="address"
 							bind:value={userGreeting}
@@ -148,7 +148,7 @@
 					</div>
 
 					<button
-						class="btn variant-filled col-span-2 inline-flex items-center justify-center px-4 py-2 rounded-md"
+						class="btn variant-filled inline-flex items-center justify-center px-2 md:px-4 py-2 rounded-md mt-2 md:mt-0 md:col-span-4"
 						on:click={SetNewGreeting}
 						><WriteIcon class={'h-6 w-6 mr-2'} />
 						Set greeting</button
@@ -157,11 +157,11 @@
 			{/if}
 		{:else}
 			<div class="">
-				<p class="text-base mb-2">
+				<p class="text-sm md:text-base mb-2">
 					Please connect to the network {getChainDataByChainId(SEPOLIA_CHAINID).name} for the $contract
 					store demo.
 				</p>
-				<p class="text-base mb-2">
+				<p class="text-sm md:text-base mb-2">
 					You can add additional testnet connections to metamask via (Account Icon / Settings /
 					Advanced / Show Test Networks)
 				</p>

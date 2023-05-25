@@ -15,7 +15,15 @@
 	let transactionsForBlock: any[] = [];
 	let hasSubscription = false;
 
-	const shortenTx = (tx: string) => (tx.length >= 64 ? `${tx.slice(0, 64)}...` : tx);
+	const shortenHash = (tx: string, startLength: number = 10, endLength: number = 10) => {
+		const totalLength = startLength + endLength;
+
+		if (tx.length > totalLength) {
+			return `${tx.slice(0, startLength)}...${tx.slice(-endLength)}`;
+		} else {
+			return tx;
+		}
+	};
 
 	// Reactive Array of Objects holds our list of transactions for latest block
 	let tableSource: Array<TransactionTableRow>;
@@ -71,50 +79,58 @@
 </script>
 
 <div class="p-4">
-	<h2 class="col-span-3 text-3xl font-semibold mb-4">Block information</h2>
+	<h2 class="text-xl md:text-3xl font-semibold mb-4">Block information</h2>
 
-	<div class="p-6 mb-6">
-		<table class="table-auto w-full justify-center flex">
+	<div class="p-2 md:p-6 m-2 md:m-6">
+		<table class="table-auto w-full">
 			<tbody>
-				<tr class="text-sm"><td>Block:</td><td>{latestBlockNumber}</td></tr>
-				<tr class="text-sm"><td>Gas Used:</td><td>{latestBlock?.gasUsed ?? 'N/A'}</td></tr>
-				<tr class="text-sm"><td>Block Hash:</td><td>{latestBlock?.hash ?? 'N/A'}</td></tr>
-				<tr class="text-sm"><td>Miner:</td><td>{latestBlock?.miner ?? 'N/A'}</td></tr>
-				<tr class="text-sm"
+				<tr class="text-xs md:text-sm"><td>Block:</td><td>{latestBlockNumber}</td></tr>
+				<tr class="text-xs md:text-sm"
+					><td>Gas Used:</td><td>{latestBlock?.gasUsed ?? 'N/A'}</td></tr
+				>
+				<tr class="text-xs md:text-sm"
+					><td>Block Hash:</td><td>{shortenHash(latestBlock?.hash ?? 'N/A', 20, 20)}</td></tr
+				>
+				<tr class="text-xs md:text-sm"
+					><td>Miner:</td><td>{shortenHash(latestBlock?.miner ?? 'N/A', 20, 20)}</td></tr
+				>
+				<tr class="text-xs md:text-sm"
 					><td>Date Timestamp:</td><td
 						>{latestBlock?.timestamp
 							? new Date(latestBlock.timestamp * 1000).toLocaleString()
 							: 'N/A'}</td
 					></tr
 				>
-				<tr class="text-sm"><td>Unix Timestamp:</td><td>{latestBlock?.timestamp ?? 'N/A'}</td></tr>
+				<tr class="text-xs md:text-sm"
+					><td>Unix Timestamp:</td><td>{latestBlock?.timestamp ?? 'N/A'}</td></tr
+				>
 			</tbody>
 		</table>
 	</div>
 
-	<div class="table">
-		<table class="table-auto w-full">
+	<div class="table table-compact">
+		<table class="table-auto w-full text-center">
 			<thead>
 				<tr>
-					<th class="px-4 py-2">Transaction found in block {latestBlockNumber}</th>
+					<th class="px-2 md:px-4 py-2">Transaction found in block {latestBlockNumber}</th>
 				</tr>
 			</thead>
 			<tbody>
 				{#each paginatedSource as row}
 					{#if row}
 						<tr>
-							<td class="border px-4 py-2">
+							<td class="border px-2 md:px-4 py-2">
 								<a
 									href={row.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									class="underline text-blue-500">{shortenTx(row.url)}</a
+									class="underline text-blue-500">{shortenHash(row.url, 34, 20)}</a
 								>
 							</td>
 						</tr>
 					{:else}
 						<tr>
-							<td class="border px-4 py-2">
+							<td class="border px-2 md:px-4 py-2">
 								<p>Awaiting next block...</p>
 							</td>
 						</tr>
@@ -122,6 +138,6 @@
 				{/each}
 			</tbody>
 		</table>
-		<Paginator class="p-6" bind:settings={page} />
+		<Paginator class="p-2 md:p-6" bind:settings={page} />
 	</div>
 </div>
