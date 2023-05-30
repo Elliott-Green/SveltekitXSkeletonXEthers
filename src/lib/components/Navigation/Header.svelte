@@ -13,6 +13,7 @@
 	import { Jazzicon } from 'ethers-svelte/components';
 	import { AppBar } from '@skeletonlabs/skeleton';
 	import ConnectIcon from '../Icons/ConnectIcon.svelte';
+	import { onMount } from 'svelte';
 
 	async function ConnectWallet() {
 		console.log(`connectWallet - ${!$connected}`);
@@ -35,18 +36,24 @@
 		}
 	}
 
+	onMount(async () => {
+		await ConnectWallet();
+	});
+
 	const shortenAddress = (address: string) => `${address.slice(0, 6)}...${address.slice(-4)}`;
 </script>
 
 <AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
-	<svelte:fragment slot="lead"
-		><p class="font-bold">Sveltekit X Skeleton X Ethers</p></svelte:fragment
-	>
+	<svelte:fragment slot="lead">
+		<img src="./logo.png" class="w-10 h-10" />
+	</svelte:fragment>
+
+	<p class="font-bold">Sveltekit X Skeleton X Ethers</p>
 
 	<svelte:fragment slot="trail">
 		{#if !$connected}
 			<button on:click={ConnectWallet} class="btn variant-filled">
-				<span class="pl-1 pr-1">	<ConnectIcon class={"h-6 w-6"} /></span>
+				<span class="pl-1 pr-1"> <ConnectIcon class={'h-6 w-6'} /></span>
 				<span class="pl-1 pr-1">Connect Wallet</span>
 			</button>
 		{:else}

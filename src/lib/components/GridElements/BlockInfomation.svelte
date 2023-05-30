@@ -78,10 +78,10 @@
 	);
 </script>
 
-<div class="p-4">
-	<h2 class="text-xl md:text-3xl font-semibold mb-4">Block information</h2>
+<div class="p-6 grid grid-cols-1">
+    <h2 class="col-span-full text-2xl font-bold mb-2">Block information</h2>
 
-	<div class="p-2 md:p-6 m-2 md:m-6">
+	<div class="p-2 m-2">
 		<table class="table-auto w-full">
 			<tbody>
 				<tr class="text-xs md:text-sm"><td>Block:</td><td>{latestBlockNumber}</td></tr>

@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Elliott-Green/SveltekitXSkeletonXEthers">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./static/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Sveltekit X Skeleton X Ethers</h3>
@@ -63,6 +63,10 @@ This project draws inspiration from [0xjimmy/svelte-kit-ethers-template](https:/
 - **@metamask/etherscan-link**: A tool for getting a block explorer URL for a given chain id. Ethers doesn't have this by default does WAGMI does. Go figure.
 
 I recommend reading the documentation for all of the technologies before using this repo. Please do not raise issues that could have resolved by looking at the parent depencencies documentation.
+
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="./static/screenshot.png" alt="Logo" >
+  </a>
 
 ## Setup
 
@@ -158,4 +162,4 @@ Project Link: [https://github.com/Elliott-Green/SveltekitXSkeletonXEthers](https
 [issues-url]: https://github.com/Elliott-Green/SveltekitXSkeletonXEthers/issues
 [license-shield]: https://img.shields.io/github/license/Elliott-Green/SveltekitXSkeletonXEthers.svg?style=for-the-badge
 [license-url]: https://github.com/Elliott-Green/SveltekitXSkeletonXEthers/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: ./static/screenshot.png

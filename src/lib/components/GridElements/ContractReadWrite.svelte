@@ -102,9 +102,10 @@
 	}
 </script>
 
-<div class="p-4 md:p-6">
-	<h2 class="text-xl md:text-3xl font-semibold mb-2">Contract ABI Read/Write</h2>
-	<p class="">
+
+<div class="p-6 grid grid-cols-1">
+    <h2 class="col-span-full text-2xl font-bold mb-2">Contract ABI Read/Write</h2>
+	<p class="md:w-96">
 		This section is proving that we can read, write and stay updated with the state field 'Greet'
 		from the Greeter contract. <a
 			class="text-blue-600 hover:text-blue-800 underline"
@@ -112,6 +113,7 @@
 			target="_blank">Take a look at the contract on the Sepolia testnet</a
 		>
 	</p>
+	
 
 	<div class="pt-4 md:pt-6">
 		{#if $connected}
