@@ -98,6 +98,52 @@ npm run docker:remove   # will remove the sk-skeleton-ethers-template-container.
 npm run docker:clean    # will force remove the Docker image.
 ```
 
+## Project Structure
+
+```ts
+├── src
+│   ├── app.d.ts
+│   ├── app.html
+│   ├── app.postcss
+│   ├── lib
+│   │   ├── abi
+│   │   │   └── Greeter.json
+│   │   ├── components
+│   │   │   ├── GridElements
+│   │   │   │   ├── AccountInfomation.svelte
+│   │   │   │   ├── BlockInfomation.svelte
+│   │   │   │   └── ContractReadWrite.svelte
+│   │   │   ├── Icons
+│   │   │   │   ├── ConnectIcon.svelte
+│   │   │   │   ├── HomeIcon.svelte
+│   │   │   │   ├── IdentificationIcon.svelte
+│   │   │   │   ├── MoneyIcon.svelte
+│   │   │   │   ├── SearchIcon.svelte
+│   │   │   │   └── WriteIcon.svelte
+│   │   │   └── Navigation
+│   │   │       └── Header.svelte
+│   │   └── gradient
+│   │       └── gradient.js
+│   └── routes
+│       ├── +error.svelte
+│       ├── +layout.svelte
+│       └── +page.svelte
+├── static
+│   ├── favicon.png
+│   ├── logo.png
+│   └── screenshot.png
+├── Dockerfile
+├── jsconfig.json
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── postcss.config.cjs
+├── README.md
+├── svelte.config.js
+├── tailwind.config.cjs
+└── vite.config.js
+```
+
 ## What is this repository showing me?
 
 This repository contains an opinionated hello world using the [Greeter / Hello World Contract](https://github.com/PaulRBerg/hardhat-template/blob/main/contracts/Greeter.sol). It serves as a guide to various functionalities in a blockchain web application. The highlighted features are:
