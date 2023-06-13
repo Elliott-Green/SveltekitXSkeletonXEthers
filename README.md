@@ -53,7 +53,7 @@
 
 ## About
 
-###### _This project is inspired from [Svelte Kit Ethers Template](https://github.com/0xjimmy/svelte-kit-ethers-template) by [0xJimmy](https://github.com/0xjimmy)._
+###### _This project is inspired from [SvelteKit-Ethers Template](https://github.com/0xjimmy/svelte-kit-ethers-template) by [0xJimmy](https://github.com/0xjimmy)._
 
 The aim of this template is to provide a more opinionated `Hello World` setup with built-in contract reading and writing capabilities.
 
@@ -64,9 +64,9 @@ The aim of this template is to provide a more opinionated `Hello World` setup wi
 - [**Ethers-Svelte**](https://github.com/clbrge/ethers-svelte) - A utility for managing Ethers state in Svelte stores.
 - [**Etherscan Link Generator**](https://github.com/MetaMask/etherscan-link) - A tool for generating block explorer URLs for a given chain ID. Ethers doesn't provide this functionality by default, _but WAGMI does_.
 
-> Feel free to uninstall SkeletonUI and choose your own preferred styling solution.
+> - Feel free to uninstall SkeletonUI and choose your own preferred styling solution.
 
-> ⚠️ Before using this repository, it is recommended to read the documentation for all the technologies involved. Please avoid raising issues that can be resolved by referring to the documentation of the respective dependencies.
+> - ⚠️ Before using this repository, it is recommended to read the documentation for all the technologies involved. Please avoid raising issues that can be resolved by referring to the documentation of the respective dependencies.
 
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="./static/screenshot.png" alt="Logo" >
@@ -100,52 +100,6 @@ npm run docker:run      # will run a new Docker container named container from t
 npm run docker:stop     # will stop the running sk-skeleton-ethers-template-container
 npm run docker:remove   # will remove the sk-skeleton-ethers-template-container. The container needs to be stopped before it can be removed.
 npm run docker:clean    # will force remove the Docker image.
-```
-
-## Project Structure
-
-```ts
-├── src
-│   ├── app.d.ts
-│   ├── app.html
-│   ├── app.postcss
-│   ├── lib
-│   │   ├── abi
-│   │   │   └── Greeter.json
-│   │   ├── components
-│   │   │   ├── GridElements
-│   │   │   │   ├── AccountInfomation.svelte
-│   │   │   │   ├── BlockInfomation.svelte
-│   │   │   │   └── ContractReadWrite.svelte
-│   │   │   ├── Icons
-│   │   │   │   ├── ConnectIcon.svelte
-│   │   │   │   ├── HomeIcon.svelte
-│   │   │   │   ├── IdentificationIcon.svelte
-│   │   │   │   ├── MoneyIcon.svelte
-│   │   │   │   ├── SearchIcon.svelte
-│   │   │   │   └── WriteIcon.svelte
-│   │   │   └── Navigation
-│   │   │       └── Header.svelte
-│   │   └── gradient
-│   │       └── gradient.js
-│   └── routes
-│       ├── +error.svelte
-│       ├── +layout.svelte
-│       └── +page.svelte
-├── static
-│   ├── favicon.png
-│   ├── logo.png
-│   └── screenshot.png
-├── Dockerfile
-├── jsconfig.json
-├── LICENSE
-├── package-lock.json
-├── package.json
-├── postcss.config.cjs
-├── README.md
-├── svelte.config.js
-├── tailwind.config.cjs
-└── vite.config.js
 ```
 
 ## What is this repository showing me?
