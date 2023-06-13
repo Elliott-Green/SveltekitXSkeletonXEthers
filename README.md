@@ -53,16 +53,20 @@
 
 ## About
 
-This project draws inspiration from [0xjimmy/svelte-kit-ethers-template](https://github.com/0xjimmy/svelte-kit-ethers-template). I wanted to create a more opinionated hello world template with contract reading/writing out of the box.
+###### _This project is inspired from [SvelteKit-Ethers Template](https://github.com/0xjimmy/svelte-kit-ethers-template) by [0xJimmy](https://github.com/0xjimmy)._
 
-- **SvelteKit**: Actually makes frontend development relatively fun, and it's blitz quick too. [Learn more](https://kit.svelte.dev/docs/introduction)
-- **Tailwind**: A class based CSS framework, eliminating the need for spaghetti-style CSS files. [Learn more](https://tailwindcss.com)
-- **Skeleton**: A UI library wrapping around SK and TW, providing building blocks to create visually appealing components effortlessly. You can feel free to uninstall this out and change to a styling of your choice. [Learn more](https://www.skeleton.dev)
-- **Ethers**: A well documented and maintained library that encapsulates Ethereum function calls. [Learn more](https://docs.ethers.org/v5/)
-- **Ethers-svelte**: A utility for managing Ethers state in Svelte stores. [Learn more](https://github.com/clbrge/ethers-svelte)
-- **@metamask/etherscan-link**: A tool for getting a block explorer URL for a given chain id. Ethers doesn't have this by default does WAGMI does. Go figure.
+The aim of this template is to provide a more opinionated `Hello World` setup with built-in contract reading and writing capabilities.
 
-I recommend reading the documentation for all of the technologies before using this repo. Please do not raise issues that could have resolved by looking at the parent depencencies documentation.
+- [**SvelteKit**](https://kit.svelte.dev/docs/introduction) - Makes frontend development relatively enjoyable and offers impressive speed.
+- [**TailwindCSS**](https://tailwindcss.com) - A class-based CSS framework that eliminates the need for messy CSS files.
+- [**SkeletonUI**](https://www.skeleton.dev) - A UI library that builds on top of Skeleton and TailwindCSS, providing easy-to-use components for visually appealing designs.
+- [**Ethers.JS**](https://docs.ethers.org/v5/) - A well-documented and actively maintained library that encapsulates Ethereum function calls.
+- [**Ethers-Svelte**](https://github.com/clbrge/ethers-svelte) - A utility for managing Ethers state in Svelte stores.
+- [**Etherscan Link Generator**](https://github.com/MetaMask/etherscan-link) - A tool for generating block explorer URLs for a given chain ID. Ethers doesn't provide this functionality by default, _but WAGMI does_.
+
+> - Feel free to uninstall SkeletonUI and choose your own preferred styling solution.
+
+> - ⚠️ Before using this repository, it is recommended to read the documentation for all the technologies involved. Please avoid raising issues that can be resolved by referring to the documentation of the respective dependencies.
 
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="./static/screenshot.png" alt="Logo" >
