@@ -1,5 +1,6 @@
 <!-- Improved compatibility of back to top link -->
 
+<h1> this project is now depreciated in favour of <a href="https://github.com/Elliott-Green/skelekit-wagmiconnect">Elliott-Green/skelekit-wagmiconnect</a>
 <a name="readme-top"></a>
 
 [![Contributors][contributors-shield]][contributors-url]
